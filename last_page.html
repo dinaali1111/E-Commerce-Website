@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home_Page.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawsome/all.css">
+    <link rel="stylesheet" href="Home_Page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+#cart-count {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card {
+    width: 28rem; 
+    max-width: 90%; 
+    margin: 0 auto; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 22rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 18rem; 
+    }
+}
+</style>
+    <title>cart</title>
+</head>
+<body >
+  <section class="container-fluid">
+    <section class="nav justify-content-between m-4 text-light">
+
+      <ul class="nav d-flex">
+        <li class="nav-item">
+          <a class="nav-link active text-light fs-4" aria-current="page" href="#" onclick="BackToHome()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-4" href="#">Contact</a>
+        </li>
+        
+      </ul>
+      <ul class="nav d-flex pr-4 ">
+        <div style="position: relative; display: inline-block;">
+          <i id="cart-icon"  class="fa-solid fa-cart-shopping text-primary fa-2x  text-light mt-3 " onclick="ToCart()" style="cursor: pointer; "></i>
+          <span id="cart-count" style="position: absolute; top:5px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 1px 3px; font-size: 12px;">
+            0
+          </span>
+        </div>
+        
+          </li>
+          
+              
+          <li class="nav-item">
+              <a class="nav-link text-light fs-4" id="user-link" href="#">username</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-4"  onclick="logout()" href="#">log Out</a>
+            </li>
+  
+      </ul>
+  
+  
+  </section>
+  
+  
+   
+  
+  <div class="card border-info col-lg-4 col-md-6 col-sm-8 mb-3 text-center mx-auto" style="transform: translateY(-50%);margin-top: 280px; width: 30%;">
+    <div class="d-flex justify-content-center align-items-center vh-98">
+      <div class="card border-info text-center" style="width: 22rem; aspect-ratio: 1/1;">
+        <div class="card-header">done (:</div>
+        <div class="card-body">
+          <div class="card border-info mb-3">
+            <div class="card-body">
+              <img src="images/SmileFace2.jpg" alt="Order Image" class="img-fluid rounded" style="max-height: 150px;">
+              <p class="card-text">YOUR ORDER IS SHIPPED. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+  </section>
+ 
+<script>
+
+function logout() {
+    window.location.href = "login.html"; 
+}
+function BackToHome() {
+    window.location.href ="Home_Page.html"; 
+}
+function ToCart() {
+    window.location.href = "cart.html"; 
+}
+function updateUserName() {
+  const username = sessionStorage.getItem("username");
+
+  if (username) {
+    document.getElementById("user-link").textContent = username;
+  }
+}
+
+window.onload = updateUserName;
+let scrollToTopButton = document.getElementById("scrollToTop");
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollToTopButton.style.display = "block"; 
+  } else {
+    scrollToTopButton.style.display = "none"; 
+  }
+};
+
+scrollToTopButton.onclick = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" 
+  });
+};
+</script>
+    
+</body>
+</html>

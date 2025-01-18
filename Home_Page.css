@@ -1,0 +1,147 @@
+body {
+  font-family: "Sofia", cursive, sans-serif;
+  background: linear-gradient(to right, #d5ae84, #af8b38cf);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.slider-container {
+  max-width: 70%;
+  margin: 50px auto;
+  padding: 10px;
+  background-color: linear-gradient(to left, #2575fc, #6a11cb);
+  border-radius: 100px;
+  position: relative;
+  height: 72vh;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 72vh;
+  border-radius: 100px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider img {
+  width: 100%;
+  height: 60vh;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+#Navbar {
+  color: #fff;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(165, 119, 40, 0.536);
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+
+#cart-count {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu-container {
+  margin-top: 30%;
+  flex-wrap: wrap;
+}
+
+h1 {
+  color: #555;
+}
+
+#menu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.menu-item {
+  background-color: rgb(15, 13, 10);
+  color: #fff;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease, 0.2s ease-in-out;
+  text-align: center;
+}
+
+.menu-item img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.menu-item:hover {
+  background-color: wheat;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: 90%;
+    height: 50vh;
+  }
+
+  .slider {
+    height: 50vh;
+  }
+
+  .slider img {
+    height: 40vh;
+  }
+
+  .menu-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

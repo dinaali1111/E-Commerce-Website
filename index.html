@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #99815f, #d7cb9e94);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: black;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            /* display: none; */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #99815f;
+        }
+        .input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group .toggle-password {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #99815f;
+    cursor: pointer;
+}
+
+        .input-group input {
+            width: 100%;
+            border: 1px solid #ddd;
+            outline: none;
+            padding: 21px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .input-group.error input {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to right, #99815f, #d7cb9e94);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, #d7cb9e94, #99815f);
+            transform: scale(1.05);
+        }
+
+        .forgot-link {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Sing in! 
+                 <span 
+                 style="color: red;">&hearts;
+                </span>
+                </h1>
+            <form class="login-form" onsubmit="return validateForm(event)">
+                <div class="input-group" id="email-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email" id="email" style="width: 85%; margin-right: 30px;" aria-label="Email">
+                    <span class="error-message"></span>
+
+                </div>
+                <div class="input-group" id="username-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="UserName" id="username" style="width: 85%; " aria-label="Username">
+                    <span class="error-message"></span>
+
+                </div>
+                <div class="input-group" id="password-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" 
+                    placeholder="Password" 
+                    id="password" style="width: 85%; margin-right: 30px;"
+                    
+                    aria-label="Password">
+                    <i class="fas fa-eye toggle-password" id="togglePassword" style="cursor: pointer; " ></i>
+                    <span class="error-message"></span>
+                </div>
+                <div class="input-group" id="confirm-password-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" id="Confirm_password" style="width: 85%; margin-right: 30px;" aria-label="Confirm Password">
+                    <i class="fas fa-eye toggle-password" id="toggleConfirmPassword" style="cursor: pointer;"></i>
+                    <span class="error-message"></span>
+                </div>
+                
+                <button type="submit" class="submit-btn"  aria-label="Login">Sing In</button>
+
+            </form>
+        </div>
+    </div>
+  
+    <script>
+      document.getElementById('togglePassword').addEventListener('click', function () {
+    togglePasswordVisibility('password', this);
+});
+document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+    togglePasswordVisibility('Confirm_password', this);
+});
+
+function togglePasswordVisibility(inputId, icon) {
+    let input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+}
+
+function validateForm(event) {
+    event.preventDefault();
+
+    let email = document.getElementById('email');
+    let username = document.getElementById('username');
+    let password = document.getElementById('password');
+    let confirmPassword = document.getElementById('Confirm_password');
+
+    let emailGroup = document.getElementById('email-group');
+    let usernameGroup = document.getElementById('username-group');
+    let passwordGroup = document.getElementById('password-group');
+    let confirmPasswordGroup = document.getElementById('confirm-password-group');
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordPattern = /^\d{8,}$/;
+
+    clearErrors([emailGroup, usernameGroup, passwordGroup, confirmPasswordGroup]);
+
+    let valid = true;
+
+    if (!email.value.match(emailPattern)) {
+        showError(emailGroup, "Please enter a valid email address.");
+        valid = false;
+    }
+
+    if (username.value.trim() === "") {
+        showError(usernameGroup, "Username is required.");
+        valid = false;
+    }
+
+    if (!password.value.match(passwordPattern)) {
+        showError(passwordGroup, "Password must be at least 8 digits and contain only numbers.");
+        valid = false;
+    }
+
+    if (password.value !== confirmPassword.value) {
+        showError(confirmPasswordGroup, "Passwords do not match.");
+        valid = false;
+    }
+
+    if (valid) {
+        sessionStorage.setItem("username", username.value);
+        window.location.href = "Home_Page.html";
+    }
+}
+
+function showError(group, message) {
+    group.classList.add('error');
+    group.querySelector('.error-message').textContent = message;
+}
+
+function clearErrors(groups) {
+    groups.forEach(group => {
+        group.classList.remove('error');
+        group.querySelector('.error-message').textContent = '';
+    });
+}
+
+    </script>
+</body>
+
+</html>

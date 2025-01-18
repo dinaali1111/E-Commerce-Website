@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Home_Page.css" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="fontawsome/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+VIC+Guides&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Home page</title>
+  </head>
+  <body>
+    <section class="nav justify-content-between m-4">
+      <ul class="nav d-flex">
+        <li class="nav-item" id="icon">
+          <img id="logo" 
+          style="width:130px; margin-top: -15px;"
+           src="images/LoGo.png" alt=" ">
+        
+        </li>
+ 
+      </ul>
+      <ul class="nav d-flex pr-4">
+        <div style="position: relative; display: inline-block">
+          <i
+            id="cart-icon"
+            class="fa-solid fa-cart-shopping fa-2x mt-3 text-light"
+            onclick="ToCart()"
+            style="cursor: pointer"
+            aria-label="Shopping Cart"
+          ></i>
+          <span
+           id="cart-count" 
+           style="position: absolute; top: 5px; right: -10px;
+            background-color: red; color: white; border-radius: 50%; padding: 1px 3px;
+            font-size: 12px;">
+            0
+          </span>
+        </div>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light fs-4"
+            id="user-link"
+            href="#"
+            aria-label="User Profile"
+            >username</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light fs-4"
+            onclick="logout()"
+            href="#"
+            aria-label="Log Out"
+            >log Out</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <section class="slider-container">
+      <div class="slider">
+        <button id="prev" class="nav-btn" aria-label="Previous Slide">
+          <i class="fa-solid fa-arrow-left text-dark"></i>
+        </button>
+        <div class="slides">
+          <img src="images/photoS4.jpg" alt="Image 3" class="slider-image" />
+          <img src="images/photoS1.jpg" alt="Image 1" class="slider-image" />
+          <img src="images/photoS2.jpg" alt="Image 2" class="slider-image" />
+          <img src="images/image4.jpg" alt="Image 4" class="slider-image" />
+          <img src="images/image5.jpg" alt="Image 5" class="slider-image" />
+          <img src="images/image6.jpg" alt="Image 6" class="slider-image" />
+        </div>
+        <button id="next" class="nav-btn" aria-label="Next Slide">
+          <i class="fa-solid fa-arrow-right text-dark"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="container">
+      <h1
+        style="
+          color: aliceblue;
+          font-size: 36px;
+          text-shadow: 4px 15px 10px rgba(0, 0, 0, 0.5);
+          padding: 10px;
+        "
+      >
+        OUR PRODUCTS
+      </h1>
+      <div class="justify-content-between p-4 mt-4">
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-dark btn-lg shadow-lg text-warning category-btn"          
+          data-category="all"
+          aria-label="All Categories"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-dark btn-lg shadow-lg text-warning category-btn"          
+          data-category="shoses"
+          aria-label="shoses Category"
+        >
+        Shoses
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-dark btn-lg shadow-lg text-warning category-btn"
+                    data-category="T-Shirts"
+          aria-label="T-Shirts Category"
+        >
+        T-Shirts
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-dark btn-lg shadow-lg text-warning category-btn" 
+                data-category="Skirts"
+          aria-label="Skirts Category"
+        >
+        Skirts
+        </button>
+      </div>
+    </section>
+
+    <section class="container d-flex justify-content-evenly">
+      <div class="menu-container" style="margin-right: 8%">
+        <ul id="menu-list">
+          <li class="menu-item card mb-4 col-4 category-item category-shoses category-all">
+            <h5 class="card-title">Shose1</h5> 
+            <img class="img-fluid" src="images/shoses9.jpg" alt="Shoses1" />
+            <p class="category" data-category="shoes">   
+                  <h6 class="price" data-price="15$">Price: 15$</h6>
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailsproEight()" aria-label="View Details"></i>
+            </div>
+          </li>
+          <li class="menu-item card mb-4 col-4 category-item category-shoses">
+            <h5 class="card-title">Shose2</h5> 
+            <img class="img-fluid" src="images/shoses10.jpg" alt="shoses2" />
+            <p class="category" data-category="shoes"></p>
+            <h6 class="price" data-price="35$">Price: 35$</h6>
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailsproSeven()" aria-label="View Details"></i>
+            </div>
+          </li>
+          <li class="menu-item card mb-4 col-4 category-item category-shoses">
+            <h5 class="card-title">Shose3 </h5> 
+            <img class="img-fluid" src="images/shoses6.jpg" alt="shoses3" />
+            <p class="category" data-category="shoes"></p>
+            <h6 class="price" data-price="15$">Price: 15$</h6>
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick=" ToPageDetailsproNine()" aria-label="View Details"></i>
+            </div>
+          </li>
+        </ul>
+        <ul id="menu-list">
+          <li class="menu-item card mb-4 col-4 h-100 category-item category-Skirts category-all">
+            <h5 class="card-title"> Skirts3</h5> 
+            <img class="img-fluid" src="images/Skirts9.jpg" alt="Skirts1" />
+            <h6 class="price" data-price="55$">Price: 55$</h6>
+            <p class="category" data-category="Skirts"></p>
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailsproFive()" aria-label="View Details"></i>
+            </div>
+          </li>
+          <li class="menu-item card mb-4 col-4 h-100 category-item category-Skirts ">
+            <h5 class="card-title">Skirts2</h5> 
+            <img class="img-fluid " src="images/Skirts3.jpg" alt="Skirts2" />
+            <h6 class="price" data-price="55$">Price: 55$</h6>
+            <p class="category" data-category="Skirts"></p>
+
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailsprofour()" aria-label="View Details"></i>
+            </div>
+          </li>
+          <li class="menu-item card mb-4 col-4 h-90 category-item category-Skirts">
+            <h5 class="card-title">Skirts3</h5>
+            <img class="img-fluid" src="images/Skirt7.jpg" alt="Skirts3" />
+            <h6 class="price" data-price="55$">Price: 85$</h6>
+            <p class="category" data-category="Skirts"></p>
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailss()" aria-label="View Details"></i>
+            </div>
+          </li>
+        </ul>
+        <ul id="menu-list">
+          <li class="menu-item card mb-4 col-4 category-item category-T-Shirts category-all">
+            <h5 class="card-title">Red Sweat-Shirt</h5> 
+            <img class="img-fluid" src="images/pro1.jpg" alt="T-Shirts1" />
+            <h6 class="price" data-price="20$">Price: 20$</h6>
+            <p class="category" data-category="Sweat-Shirt"></p>
+
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailsproThree()" aria-label="View Details"></i>
+            </div>
+          </li>
+          <li class="menu-item card mb-4 col-4 category-item category-T-Shirts">
+            <h5  class="card-title ">Grey Sweat-Shirt</h5> 
+            <img class="img-fluid" src="images/Pro2.jpg" alt="T-Shirts2" />
+            <h6 class="price" data-price="15$">Price: 15$</h6>
+            <p class="category" data-category="Sweat-Shirt"></p>
+
+            
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetails()" aria-label="View Details"></i>
+            </div>
+          </li>
+          <li class="menu-item card mb-4 col-4 category-item category-T-Shirts">
+            <h5 class="card-title">Black Sweat-Shirt</h5> 
+            <img class="img-fluid" src="images/pro3.jpg" alt="T-Shirts3" />
+            <h6 class="price" data-price="200$">Price: 200$</h6>
+            <p class="category" data-category="Sweat-Shirt"></p>
+
+
+            <div class="icon-overlay">
+              <i class="fas fa-plus" onclick="addToCart(this)" aria-label="Add to Cart"></i>
+              <i class="fas fa-eye" onclick="ToPageDetailsproOne()" aria-label="View Details"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+        <footer class="d-flex justify-content-end mr-3">
+
+        <a
+        class="btn btn-outline-secondary btn-dark btn-lg shadow-lg text-warning"
+          id="scrollToTop"
+          role="button"
+          style="position: fixed; bottom: 20px; right: 20px; display: none"
+          aria-label="Scroll to top"
+        >
+        <i class="fa-solid fa-arrow-up text-light fa-3x"></i>
+      </a>
+      </footer>
+      </div>
+    </section>
+
+    <script src="fontawsome/all.min.js"></script>
+    <script src="Home_Page.js"></script>
+  </body>
+</html>

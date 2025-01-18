@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home_Page.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawsome/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="cart.css">
+    <title>Cart</title>
+    <style>
+
+
+
+    </style>
+</head>
+<body>
+<section class="nav justify-content-between m-4">
+      <ul class="nav d-flex">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-light fs-4"
+            aria-current="page"
+            onclick="BackToHome()"
+            aria-label="Go to Home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-4" href="#" aria-label="Contact Us">Contact</a>
+        </li>
+      </ul>
+      <ul class="nav d-flex pr-4">
+        <div style="position: relative; display: inline-block">
+          <i
+            id="cart-icon"
+            class="fa-solid fa-cart-shopping fa-2x mt-3 text-light"
+            onclick="ToCart()"
+            style="cursor: pointer"
+            aria-label="Shopping Cart"
+          ></i>
+          <span
+            id="cart-count"
+            style="
+              position: absolute;
+              top: 5px;
+              right: -10px;
+              background-color: red;
+              color: white;
+              border-radius: 50%;
+              padding: 1px 3px;
+              font-size: 12px;
+            "
+            aria-live="polite"
+          >
+            0
+          </span>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-4" id="user-link" href="#" aria-label="User Profile">username</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-4" onclick="logout()" href="#" aria-label="Log Out">log Out</a>
+        </li>
+      </ul>
+    </section>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">Shopping Cart</div>
+            <div class="card-body">
+                <ul class="list-group" aria-label="List of items in cart"></ul>
+            </div>
+            <div class="card-footer">
+                Total Amount: $<span id="total-amount">0</span>
+                <button class="btn btn-dark text-warning float-right" id="buy-now" aria-label="Buy Now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="d-flex justify-content-end mr-3">
+        <a class="btn btn-dark" id="scrollToTop" role="button" style="position: fixed; bottom: 20px; right: 20px; display: none" aria-label="Scroll to top">
+            <i class="fa-solid fa-arrow-up text-light fa-3x"></i>
+        </a>
+    </footer>
+
+    <script src="cart.js"></script>
+
+</body>
+</html>

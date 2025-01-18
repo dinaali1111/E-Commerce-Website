@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home_Page.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawsome/all.css">
+    <link rel="stylesheet" href="Home_Page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+#cart-count {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+</style>
+    <title>clothes</title>
+</head>
+<body>
+  <section class="nav justify-content-between m-4">
+   
+    
+     
+
+    <ul class="nav d-flex">
+      <li class="nav-item">
+        <a class="nav-link active  text-light fs-4" aria-current="page"  onclick="BackToHome()">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light fs-4" href="#">Contact</a>
+      </li>
+      
+    </ul>
+    <ul class="nav d-flex pr-4 ">
+      <div style="position: relative; display: inline-block;">
+        <i id="cart-icon" class="fa-solid fa-cart-shopping  fa-2x  mt-3 text-light " onclick="ToCart()" style="cursor: pointer; "></i>
+        <span
+         id="cart-count"
+         style="position: absolute; top: 5px; right: -10px;
+          background-color: red; 
+          color: white; 
+          border-radius: 50%; 
+          padding: 1px 3px; 
+          font-size: 12px;">
+          0
+        </span>
+      </div>
+      
+        </li>
+        
+            
+        <li class="nav-item">
+            <a class="nav-link text-light fs-4" id="user-link" href="#">username</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-light fs-4"  onclick="logout()" href="#">log Out</a>
+          </li>
+
+    </ul>
+
+
+</section>
+
+
+
+<section class="container d-flex justify-content-between">
+  <section class="col-4 card mb-3 ml-5 menu-item category-item category-Sweat-Shirt "  data-id="product-128" style="  background: rgba(255, 255, 255, 0.8);  backdrop-filter: blur(70px); margin-left: 5%; " >
+  
+    <img src="images/Pro2.jpg" class="card-img-top"  alt="...">
+    <div class="card-body" >
+      <h5 class="card-title">Sweat-Shirt</h5>
+      <p class="category" data-category="Sweat-Shirt"></p>
+
+      <p class="price" data-price="95$">Price: <del>200$</del> 95$<br>
+    </p>
+      <section class="d-grid  col-4 mt-8 " style="margin-left: 37%">
+        <a   onclick="addToCart(this)" aria-label="Add to Cart" style="background-color:rgb(126, 93, 41); border: 0;">Add to cart </a>
+
+        <!-- class="btn btn-primary add-to-cart" type="button"  >Add to Card -->
+      </section>
+    </section> 
+    
+
+    <section class="col-4 card mb-3 mt-5 " style=" height: 60vh; background: rgba(255, 255, 255, 0.8);  border-radius:  10%;  width: 50%;  margin-left: 5%; " >
+     
+        <p class="text-body-secondary pt-5 " >
+          <h1>Describe product</h1>
+          design? Look no further than our latest innovation! Introducing the
+           SmartX1, the only device you'll ever need to stay connected, entertained,
+            and ahead of the game. The SmartX1 is not just a phone, it's a powerhouse of features that will transform the way you live and work.
+
+         . Its stunning 6.7-inch OLED display offers vibrant colors and crystal-clear clarity, making every image and video come to life.
+          
+          The SmartX1 also comes equipped with an advanced camera system
+           that rivals professional cameras. Capture every moment in exquisite detail with its 
+           108MP primary lens, ultra-wide-angle lens, and telephoto lens. Whether it's a
+            breathtaking landscape or a close-up portrait, the SmartX1's camera delivers stunning results every time.
+          
+          </p>
+      
+      </section>
+</section>
+
+ 
+</div>
+<footer class="d-flex justify-content-end mr-3">
+  <a class="btn btn-primary " id="scrollToTop" role="button" style="position: fixed; bottom: 20px; right: 20px; display: none;"><i class="fa-solid fa-arrow-up text-light fa-3x"></i></a>
+</footer>
+    <script src="Prodduct_deTails.js"></script>
+</body>
+</html>
