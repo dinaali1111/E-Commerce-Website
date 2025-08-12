@@ -39,6 +39,9 @@ function updateCartCount() {
   }
 }
 
+
+
+
 function updateTotalAmount() {
   let totalAmount = 0;
   document.querySelectorAll(".list-group-item").forEach((item) => {

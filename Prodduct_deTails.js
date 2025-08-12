@@ -1,9 +1,6 @@
 function logout() {
   window.location.href = "index.html";
 }
-
-  
- 
   function ToCart() {
     window.location.href = "cart.html";
   }
